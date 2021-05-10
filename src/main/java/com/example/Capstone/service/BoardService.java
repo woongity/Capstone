@@ -4,9 +4,7 @@ import com.example.Capstone.domain.Board;
 import com.example.Capstone.repository.BoardRepository;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BoardService {
@@ -16,6 +14,9 @@ public class BoardService {
         this.boardRepository = boardRepository;
     }
 
+    public void writeReply(){
+        // write reply in this function
+    }
     public void clickLiked(){
         // click like in this function
     }
@@ -24,8 +25,5 @@ public class BoardService {
     }
     public boolean addBoard(Board board){
         return boardRepository.addBoard(board);
-    }
-    public Optional<Board> getBoardOne(int idx){
-        return boardRepository.getBoardOne(idx);
     }
 }

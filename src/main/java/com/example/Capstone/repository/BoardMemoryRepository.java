@@ -1,6 +1,7 @@
 package com.example.Capstone.repository;
 
 import com.example.Capstone.domain.Board;
+import com.example.Capstone.domain.Reply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class BoardMemoryRepository implements BoardRepository{
@@ -38,11 +38,19 @@ public class BoardMemoryRepository implements BoardRepository{
     }
 
     @Override
-    public Optional<Board> getBoardOne(int idx) {
-        List<Board> result = jdbcTemplate.query("select * from BOARD where idx=?",boardRowMapper(),idx);
-        return result.stream().findAny();
+    public Board getBoardOne(int idx) {
+        return null;
     }
 
+    @Override
+    public boolean addReply(Reply reply) {
+        return false;
+    }
+
+    @Override
+    public List<Reply> getReply(int boardIdx) {
+        return null;
+    }
 
     //idx, title, contents, img
     public RowMapper<Board> boardRowMapper(){
