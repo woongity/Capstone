@@ -1,7 +1,6 @@
 package com.example.Capstone.repository;
 
 import com.example.Capstone.domain.Board;
-import com.example.Capstone.domain.Reply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -42,15 +41,6 @@ public class BoardMemoryRepository implements BoardRepository{
         return null;
     }
 
-    @Override
-    public boolean addReply(Reply reply) {
-        return false;
-    }
-
-    @Override
-    public List<Reply> getReply(int boardIdx) {
-        return null;
-    }
 
     //idx, title, contents, img
     public RowMapper<Board> boardRowMapper(){
